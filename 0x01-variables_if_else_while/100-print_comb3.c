@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
-* main - loop through variables a and b, printing digits 
+* main - loop through variables a and b printing digits
 *
 * Return: print to stdout all possible different combinations of twodigits
 **/
@@ -17,7 +17,7 @@ while (b <= '9')
 {
 putchar(a);
 putchar(b);
-if (a =='8' && b == '9')
+if (a == '8' && b == '9')
 {
 putchar('\n');
 }
