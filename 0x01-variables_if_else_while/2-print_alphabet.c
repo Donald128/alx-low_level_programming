@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - entry block
- * @void: no argument
- * Return: 0
+  * main - entry block
+  * @void: no argument
+  * Return: 0
 **/
 int main(void)
 {
@@ -14,6 +14,5 @@ int main(void)
 		putchar(c);
 	for (C = 'A'; C <= 'Z'; C++)
 		putchar(C);
-	putchar('\n');
 	return (0);
 }
