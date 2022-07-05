@@ -14,12 +14,12 @@ after = 2;
 sum = 2;
 while (count <= 29)
 {
-long fibonnnaci;
-fibonnaci = before + after;
-if ((fibonnaci % 2) == 0)
-sum += fibonnaci;
+long fibonacci;
+fibonacci = before + after;
+if ((fibonacci % 2) == 0)
+sum += fibonacci;
 before = after;
-after = fibonnaci;
+after = fibonacci;
 count++;
 }
 printf("%ld\n", sum);
