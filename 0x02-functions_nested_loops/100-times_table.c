@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_times_able - This is a absolute value
+ * print_times_table - This is a absolute value
  *
  * @n: This is the entry
  *
