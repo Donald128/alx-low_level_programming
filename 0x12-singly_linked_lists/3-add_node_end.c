@@ -1,51 +1,45 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
+#include <stdlib.h>
 #include "lists.h"
 
 /**
-* add_node_end - Add new node in the end of the linked list.
-* @head: head of the linked list.
-* @str: string to add.
-*
-* Return: pointer of the new node added to linked list.
-*/
+* add_node_end - adds a node to the end of a linked_list
+* @head: pointer to the head of a linked_list
+* @str: string
+* Return: pointer to head of node
+**/
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-list_t *new;
-list_t *temp;
+	unsigned int size;
+	list_t *new_node;
+	list_t *next_ptr;
+	char *copy_str;
 
-new = malloc(sizeof(list_t));
-if (!new)
-return (NULL);
-temp = *head;
-new->str = strdup(str);
-new->len = _strlen(str);
-new->next = NULL;
-if (*head == NULL)
-{
-*head = new;
-return (new);
-}
-while (temp->next != NULL)
-temp = temp->next;
-temp->next = new;
-return (new);
-}
+	new_node = malloc(sizeof(list_t));
+	if (new_node == NULL)
+		return (NULL);
+	copy_str = strdup(str);
+	size = 0;
 
-/**
-* _strlen - Calculate lenght of a string.
-* @s: string.
-*
-* Return: lenght of the string s.
-*/
+	while (str[size] != '\0')
+		size += 1;
 
-int _strlen(const char *s)
-{
-int idx = 0;
+	new_node->str = copy_str;
+	new_node->len = size;
+	new_node->next = NULL;
 
-for (; s[idx]; idx++)
-;
-return (idx);
+	if (*head == NULL)
+	{
+		*head = new_node;
+		return (*head);
+	}
+	next_ptr = *head;
+
+	while (next_ptr->next != NULL)
+		next_ptr = next_ptr->next;
+
+	next_ptr->next = new_node;
+	return (*head);
 }
